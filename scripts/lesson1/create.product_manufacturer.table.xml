@@ -8,21 +8,21 @@
     http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd ">
 
 
-    <changeSet id="create_product_category_table" author="kalashnikov.valentin">
-        <createTable tableName="PRODUCT_CATEGORY">
+    <changeSet id="create_product_manufacturer_table" author="kalashnikov.valentin">
+        <createTable tableName="PRODUCT_MANUFACTURER">
             <column name="PRODUCT_ID" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
-            <column name="CATEGORY_ID" type="BIGINT">
+            <column name="MANUFACTURER_ID" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        <addPrimaryKey tableName="PRODUCT_CATEGORY" columnNames="PRODUCT_ID, CATEGORY_ID"/>
-        <addForeignKeyConstraint baseTableName="PRODUCT_CATEGORY" baseColumnNames="PRODUCT_ID" constraintName="FK_PRODUCT_CATEGORY_PRODUCT"
+        <addPrimaryKey tableName="PRODUCT_MANUFACTURER" columnNames="PRODUCT_ID, MANUFACTURER_ID"/>
+        <addForeignKeyConstraint baseTableName="PRODUCT_MANUFACTURER" baseColumnNames="PRODUCT_ID" constraintName="FK_PRODUCT_MANUFACTURER_PRODUCT"
                                  referencedTableName="PRODUCT"
                                  referencedColumnNames="ID"/>
-        <addForeignKeyConstraint baseTableName="PRODUCT_CATEGORY" baseColumnNames="CATEGORY_ID" constraintName="FK_PRODUCT_CATEGORY_CATEGORY"
-                                 referencedTableName="CATEGORY"
+        <addForeignKeyConstraint baseTableName="PRODUCT_MANUFACTURER" baseColumnNames="MANUFACTURER_ID" constraintName="FK_PRODUCT_MANUFACTURER_MANUFACTURER"
+                                 referencedTableName="MANUFACTURER"
                                  referencedColumnNames="ID"/>
     </changeSet>
 
